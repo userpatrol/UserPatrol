@@ -1,0 +1,12 @@
+
+User Patrol sample scripts to export users out of Okta and into User Patrol.  One will export all users and the other will only export admin users.
+
+These 4 variables will have to be set in your code.
+
+OKTA_URLBASE - The base Okta URL
+OKTA_TOKEN   - The API token you generate from Okta as an Admin
+
+USER_PATROL_GUID - A unique ID provided once your User Patrol account is created
+USER_PATROL_SOURCE_GUID - A unique ID provided once you create a User Patrol Source
+
+More information is here: https://userpatrol.com/api-docs

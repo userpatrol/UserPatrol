@@ -1,0 +1,9 @@
+
+User Patrol sample scripts to export IAM users out of AWS and into User Patrol.
+
+These 2 variables will have to be set in your code.
+
+USER_PATROL_GUID - A unique ID provided once your User Patrol account is created
+USER_PATROL_SOURCE_GUID - A unique ID provided once you create a User Patrol Source
+
+More information is here: https://userpatrol.com/api-docs

@@ -1,0 +1,16 @@
+
+User Patrol sample scripts to export Github users for a team and into User Patrol.
+
+These 5 variables will have to be set in your code.
+
+ORG - Your Github Org name
+TEAM - Your Github Team name
+ACCESS_TOKEN - Look at https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+
+USER_PATROL_GUID - A unique ID provided once your User Patrol account is created
+USER_PATROL_SOURCE_GUID - A unique ID provided once you create a User Patrol Source
+
+
+Github information is here: https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28#list-users
+
+More information is here: https://userpatrol.com/api-docs

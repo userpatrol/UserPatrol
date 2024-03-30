@@ -5,9 +5,9 @@ ORG="[MY_ORG]"
 TEAM="[TEAM NAME]"
 ACCESS_TOKEN='[API TOKEN]'
 
-################################################################
 USER_PATROL_GUID=""
 USER_PATROL_SOURCE_GUID=""
+
 today = datetime.datetime.now()
 today_date = today.strftime("%Y-%m-%d")
 

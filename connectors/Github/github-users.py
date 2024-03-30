@@ -31,7 +31,7 @@ json_middle=''
 for item in jsonResponse:
     login=item["login"]
     #print(login + ' : ' + TEAM)
-	json_middle = json_middle + '{ "username" : "' + login + '", "custom" : "' + TEAM + '" },'
+    json_middle = json_middle + '{ "username" : "' + login + '", "custom" : "' + TEAM + '" },'
 
 json_top='''
 {

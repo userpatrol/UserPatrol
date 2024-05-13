@@ -11,8 +11,8 @@ def get_users():
         custom_list=list()
         for key in users['Users']:
             user_list.append(key['UserName'])
-            #custom_list.append(key['Arn'])  (if you want the ARN as a custom field)
-            custom_list.append('')
+            #custom_list.append(key['Arn'])  # (if you want the ARN as a custom field)
+            custom_list.append('')  # set custom field to blank
         HTTPStatusCode=users['ResponseMetadata']['HTTPStatusCode']
         return user_list, custom_list, HTTPStatusCode
     except Exception as err:

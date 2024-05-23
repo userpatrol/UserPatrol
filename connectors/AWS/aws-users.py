@@ -22,9 +22,7 @@ def get_users():
 ################################################################
 USER_PATROL_GUID=""
 USER_PATROL_SOURCE_GUID=""
-today = datetime.datetime.now()
-today_date = today.strftime("%Y-%m-%d")
-#today_date = "2024-03-16"
+
 
 json_middle=''
 user_list_result, custom_list_result, HTTPStatusCode = get_users()
@@ -40,13 +38,11 @@ json_top='''
 {
    "tenant_guid" : "<tenant_guid>",
    "source_guid" : "<source_guid>",
-   "date_added" : "<date_added>",
    "users" : [
 '''
 
 json_top = json_top.replace("<tenant_guid>", USER_PATROL_GUID)
 json_top = json_top.replace("<source_guid>", USER_PATROL_SOURCE_GUID)
-json_top = json_top.replace("<date_added>", today_date)
 
 json_end='''
       ]

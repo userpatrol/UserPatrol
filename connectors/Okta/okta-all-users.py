@@ -65,8 +65,6 @@ def fetch_okta_users():
 #
 # main
 #
-today = datetime.datetime.now()
-today_date = today.strftime("%Y-%m-%d")
 
 json_middle = ''
 user_list = fetch_okta_users()
@@ -83,13 +81,11 @@ for user_info in user_list:
 json_top='''
 {
    "tenant_guid" : "<tenant_guid>",
-   "date_added" : "<date_added>",
    "source_guid" : "<source_guid>",
    "users" : [
 '''
 
 json_top = json_top.replace("<tenant_guid>", USER_PATROL_GUID)
-json_top = json_top.replace("<date_added>", today_date)
 json_top = json_top.replace("<source_guid>", USER_PATROL_SOURCE_GUID)
 
 json_end='''

@@ -8,9 +8,6 @@ ACCESS_TOKEN='[API TOKEN]'
 USER_PATROL_GUID=""
 USER_PATROL_SOURCE_GUID=""
 
-today = datetime.datetime.now()
-today_date = today.strftime("%Y-%m-%d")
-
 URL="https://api.github.com/orgs/" + ORG + "/teams/" + TEAM + "/members"
 headers = {'Accept': 'application/json','Authorization': 'Bearer ' + ACCESS_TOKEN}
 
@@ -37,13 +34,11 @@ json_top='''
 {
    "tenant_guid" : "<tenant_guid>",
    "source_guid" : "<source_guid>",
-   "date_added" : "<date_added>",
    "users" : [
 '''
 
 json_top = json_top.replace("<tenant_guid>", USER_PATROL_GUID)
 json_top = json_top.replace("<source_guid>", USER_PATROL_SOURCE_GUID)
-json_top = json_top.replace("<date_added>", today_date)
 
 json_end='''
       ]

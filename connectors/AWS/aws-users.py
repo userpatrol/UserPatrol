@@ -18,17 +18,31 @@ def get_users():
     except Exception as err:
       return str(err), "", 0
 
+def get_user_dates(iamuser):
+    try:
+        iam = boto3.resource('iam')
+        user = iam.User(iamuser)
+        create_date = user.create_date
+        # use the account creation date if the user has never logged in.
+        password_last_used = user.password_last_used or user.create_date
+        create_date=str(create_date)[:10]
+        password_last_used=str(password_last_used)[:10]
+        return create_date, password_last_used
+    except Exception as err:
+      return "1970-01-01", "1970-01-01"
 
 ################################################################
 USER_PATROL_GUID=""
 USER_PATROL_SOURCE_GUID=""
 
-
 json_middle=''
 user_list_result, custom_list_result, HTTPStatusCode = get_users()
 if HTTPStatusCode == 200:
     for i in range(0, len(user_list_result)):
-        json_middle = json_middle + '{ "username" : "' + user_list_result[i] + '", "custom" : "' + custom_list_result[i] + '" },'
+        iamuser=user_list_result[i]
+        create_date, password_last_used = get_user_dates(iamuser)
+        json_string = json.dumps({'username': iamuser, 'create_date' : create_date , 'last_login_date': password_last_used})
+        json_middle += json_string + ','
 else:
     print(user_list_result)
     exit()
